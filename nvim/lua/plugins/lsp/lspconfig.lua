@@ -105,3 +105,20 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+
+-- configure angular server
+lspconfig["angularls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	cmd = { "ngserver" },
+	filetypes = { "typescript", "html", "typescriptreact" },
+})
+
+-- configure python server
+lspconfig["jedi_language_server"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	cmd = { "jedi-language-server" },
+	filetypes = { "python" },
+	single_file_support = true,
+})
